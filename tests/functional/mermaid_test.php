@@ -21,10 +21,16 @@ class mermaid_test extends phpbb_functional_test_case
 		return ['alfredoramos/mermaid'];
 	}
 
+	public function setUp()
+	{
+		parent::setUp();
+
+		$this->add_lang_ext('alfredoramos/mermaid', 'posting');
+		$this->login();
+	}
+
 	public function test_post_mermaid()
 	{
-		$this->login();
-
 		$bbcode = <<<EOT
 [mermaid]graph TD;
     A-->B;
@@ -61,5 +67,21 @@ EOT;
 
 		$this->assertSame(1, $elements->count());
 		$this->assertContains($expected, $result->html());
+	}
+
+	public function test_post_mermaid_reply()
+	{
+		$crawler = self::request('GET', sprintf(
+			'posting.php?mode=reply&f=2&t=1&sid=%s',
+			$this->sid
+		));
+
+		$button = $crawler->filter('.format-buttons .bbcode-mermaid');
+
+		$this->assertSame(1, $button->count());
+		$this->assertContains(
+			$this->lang('MERMAID_BUTTON_EXPLAIN'),
+			$button->attr('title')
+		);
 	}
 }
