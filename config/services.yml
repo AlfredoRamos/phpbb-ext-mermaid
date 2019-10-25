@@ -1,0 +1,5 @@
+services:
+    alfredoramos.mermaid.listener:
+        class: alfredoramos\mermaid\event\listener
+        tags:
+            - { name: event.listener }

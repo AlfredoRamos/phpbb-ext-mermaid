@@ -1,0 +1,5 @@
+{% if not INCLUDED_MERMAID_CSS %}
+{% INCLUDECSS '@alfredoramos_mermaid/css/common.css' %}
+{% INCLUDECSS '@alfredoramos_mermaid/css/mermaid.css' %}
+{%- set INCLUDED_MERMAID_CSS = true -%}
+{% endif %}

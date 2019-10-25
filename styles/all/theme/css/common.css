@@ -1,0 +1,14 @@
+/**
+ * Mermaid extension for phpBB.
+ * @author Alfredo Ramos <alfredo.ramos@yandex.com>
+ * @copyright 2019 Alfredo Ramos
+ * @license GPL-2.0-only
+ */
+.mermaid {
+	white-space: pre;
+}
+
+.mermaid > svg {
+	max-width: 100%;
+	height: auto;
+}
