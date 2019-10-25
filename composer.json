@@ -1,7 +1,7 @@
 {
 	"name": "alfredoramos/mermaid",
 	"type": "phpbb-extension",
-	"description": "Mermaid extension for phpBB",
+	"description": "Mermaid Diagrams extension for phpBB",
 	"homepage": "https://github.com/AlfredoRamos/phpbb-ext-mermaid",
 	"version": "0.1.0-dev",
 	"time": "2019-10-25",
@@ -39,7 +39,7 @@
 		"alfredoramos/markdown": "For Markdown support"
 	},
 	"extra": {
-		"display-name": "Mermaid",
+		"display-name": "Mermaid Diagrams",
 		"soft-require": {
 			"phpbb/phpbb": "~3.2.0"
 		},
