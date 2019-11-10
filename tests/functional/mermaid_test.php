@@ -83,5 +83,6 @@ EOT;
 			$this->lang('MERMAID_BUTTON_EXPLAIN'),
 			$button->attr('title')
 		);
+		$this->assertSame('m', $button->attr('accesskey'));
 	}
 }
