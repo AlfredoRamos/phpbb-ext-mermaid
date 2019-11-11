@@ -65,3 +65,7 @@ It doesn't require extra configuration.
 - Delete all the files inside `{PHPBB_ROOT}/ext/alfredoramos/mermaid/`
 - Download the new version
 - Install the extension
+
+### Credits
+
+File `load-balancer.svg` from [Zoondicons](https://www.zondicons.com/) by [Steve Schoger](https://twitter.com/steveschoger) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
