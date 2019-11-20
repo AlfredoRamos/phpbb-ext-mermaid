@@ -80,7 +80,11 @@ EOT;
 
 		$this->assertSame(1, $button->count());
 		$this->assertContains(
-			$this->lang('MERMAID_BUTTON_EXPLAIN'),
+			$this->lang('MERMAID'),
+			$button->attr('value')
+		);
+		$this->assertContains(
+			$this->lang('MERMAID_HELPLINE'),
 			$button->attr('title')
 		);
 		$this->assertSame('m', $button->attr('accesskey'));
