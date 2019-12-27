@@ -21,7 +21,7 @@ class mermaid_test extends phpbb_functional_test_case
 		return ['alfredoramos/mermaid'];
 	}
 
-	public function setUp()
+	public function setUp(): void
 	{
 		parent::setUp();
 
