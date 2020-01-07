@@ -4,5 +4,8 @@
 {%- else -%}
 {% INCLUDEJS '@alfredoramos_mermaid/js/mermaid.min.js' %}
 {%- endif -%}
+{%- if S_USER_LOGGED_IN and not S_IS_BOT -%}
+{% INCLUDEJS '@alfredoramos_mermaid/js/live_editor.js' %}
+{%- endif -%}
 {%- set INCLUDED_MERMAID_JS = true -%}
 {% endif %}

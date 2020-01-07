@@ -13,8 +13,47 @@
 	border: 1px solid #ccc;
 	padding: 5px 10px;
 }
+.mermaid-editor {
+	width: 95%;
+	transition: width 0.5s;
+}
 .bbcode-mermaid.abbc3_button {
 	background-image: url('../../../all/theme/images/load-balancer.svg');
 	background-size: 85%;
 	background-position: 50%;
+}
+
+.btn-mermaid {
+	font-weight: 400;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid transparent;
+	padding: 6px 12px;
+	border-radius: 4px;
+	font-size: 1.2em;
+}
+.btn-confirm,
+.btn-cancel {
+	color: #fff;
+}
+
+.btn-confirm {
+	background-color: #28a745;
+	border-color: #28a745;
+}
+
+.btn-confirm:hover {
+	background-color: #218838;
+	border-color: #1e7e34;
+}
+
+.btn-cancel {
+	background-color: #dc3545;
+	border-color: #dc3545;
+}
+
+.btn-cancel:hover {
+	background-color: #c82333;
+	border-color: #bd2130;
 }
