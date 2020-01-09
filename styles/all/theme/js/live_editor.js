@@ -85,4 +85,39 @@
 			}
 		}, 250);
 	});
+
+	// Insert button
+	$(document.body).on('click', '.btn-mermaid.btn-insert', function() {
+		var $code = $(this).parents('.mermaid-live-editor').first()
+			.find('#mermaid-text').first();
+		var $svg = $(this).parents('.mermaid-live-editor').first()
+			.find('.mermaid-preview > figure.mermaid').first();
+		var $text = '';
+
+		// Check if SVG was generated
+		if ($code.length > 0 && $svg.length && $svg.data('processed') === true) {
+			$text = $code.val().trim();
+
+			// Prevent button spamming
+			$(this).prop('disabled', true);
+		}
+
+		// Check if text is available
+		if ($text <= 0) {
+			return;
+		}
+
+		// Add text to message
+		insert_text('[mermaid]' + $text + '[/mermaid]');
+	});
+
+	// Clear button
+	$(document.body).on('click', '.btn-mermaid.btn-clear', function() {
+		var $code = $(this).parents('.mermaid-live-editor').first()
+			.find('#mermaid-text').first();
+
+		// Clear textarea
+		$code.val('');
+		$code.trigger('input');
+	});
 })(jQuery);

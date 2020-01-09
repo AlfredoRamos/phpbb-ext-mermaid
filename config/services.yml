@@ -7,5 +7,6 @@ services:
     alfredoramos.mermaid.controller:
         class: alfredoramos\mermaid\controller\mermaid
         arguments:
+            - '@request'
             - '@controller.helper'
             - '@language'

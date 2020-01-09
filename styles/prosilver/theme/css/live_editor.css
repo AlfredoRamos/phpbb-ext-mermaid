@@ -128,6 +128,11 @@
 	padding: 6px 12px;
 	border-radius: 4px;
 }
+
+.btn-mermaid[disabled] {
+	cursor: not-allowed;
+}
+
 .btn-insert,
 .btn-clear {
 	color: #fff;

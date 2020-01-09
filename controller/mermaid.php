@@ -9,11 +9,16 @@
 
 namespace alfredoramos\mermaid\controller;
 
+use phpbb\request\request;
 use phpbb\controller\helper;
 use phpbb\language\language;
+use phpbb\exception\http_exception;
 
 class mermaid
 {
+	/** @var \phpbb\request\request */
+	protected $request;
+
 	/** @var \phpbb\controller\helper */
 	protected $helper;
 
@@ -23,13 +28,15 @@ class mermaid
 	/**
 	 * Controller helper.
 	 *
-	 * @param \phpbb\controller\helper
-	 * @param \phpbb\language\language
+	 * @param \phpbb\request\request	$request
+	 * @param \phpbb\controller\helper	$helper
+	 * @param \phpbb\language\language	$language
 	 *
 	 * @return void
 	 */
-	public function __construct(helper $helper, language $language)
+	public function __construct(request $request, helper $helper, language $language)
 	{
+		$this->request = $request;
 		$this->helper = $helper;
 		$this->language = $language;
 	}
@@ -41,6 +48,12 @@ class mermaid
 	 */
 	public function editor()
 	{
+		// Users do not need to know this page exist
+		if (!$this->request->is_ajax())
+		{
+			throw new http_exception(404, 'PAGE_NOT_FOUND');
+		}
+
 		$this->language->add_lang('viewtopic');
 		$this->language->add_lang('controller', 'alfredoramos/mermaid');
 
