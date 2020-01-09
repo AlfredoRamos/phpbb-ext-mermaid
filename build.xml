@@ -19,9 +19,12 @@
 		<delete file="${dir}/.gitignore" />
 		<delete file="${dir}/.gitattributes" />
 		<delete file="${dir}/.travis.yml" />
+		<delete file="${dir}/.rubocop.yml" />
 		<delete file="${dir}/build.xml" />
 		<delete file="${dir}/phpunit.xml.dist" />
 		<delete file="${dir}/README.md" />
+		<delete file="${dir}/Gemfile" />
+		<delete file="${dir}/Rakefile" />
 	</target>
 
 	<!-- DO NOT EDIT BELOW THIS LINE -->
