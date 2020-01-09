@@ -13,7 +13,9 @@
 		window.mermaid.initialize({startOnLoad: false});
 	}
 
+	// Global variables
 	var $timer = null;
+	var $itemName = 'mermaid_code';
 
 	// Get modal box template
 	$(document.body).on('contextmenu', '.bbcode-mermaid', function($event) {
@@ -120,4 +122,70 @@
 		$code.val('');
 		$code.trigger('input');
 	});
+
+	// Cancel button
+	$(document.body).on('click', '.btn-mermaid.btn-cancel', function() {
+		$.modal.getCurrent().close();
+	});
+
+	// Load diagram code from sessionStorage
+	$(document.body).on($.modal.BEFORE_OPEN, '.mermaid-live-editor', function() {
+		console.log('before open');
+
+		// Check if sessionStorage is available
+		if (typeof Storage === 'undefined') {
+			return;
+		}
+
+		if (window.sessionStorage.getItem($itemName) !== 'null' &&
+			window.sessionStorage.getItem($itemName) !== null
+		)
+		{
+			var $code = $(this).find('#mermaid-text').first();
+
+			if ($code.length > 0) {
+				$code.val(window.sessionStorage.getItem($itemName));
+				$code.trigger('input');
+			}
+		}
+	});
+
+	// Save diagram code to sessionStorage
+	$(document.body).on($.modal.BEFORE_CLOSE, '.mermaid-live-editor', function() {
+		console.log('before close');
+
+		// Check if sessionStorage is available
+		if (typeof Storage === 'undefined') {
+			return;
+		}
+
+		var $code = $(this).find('#mermaid-text').first();
+		var $svg = $(this).find('.mermaid-preview > figure.mermaid').first();
+		var $text = '';
+
+		// Check if SVG was generated
+		if ($code.length > 0 && $svg.length && $svg.data('processed') === true) {
+			$text = $code.val().trim();
+		}
+
+		// Check if text is available
+		if ($text <= 0) {
+			return;
+		}
+
+		// Save session data
+		window.sessionStorage.setItem($itemName, $text);
+	});
+
+	// Remove session data
+	if ($('.bbcode-mermaid').length <= 0) {
+		// Check if sessionStorage is available
+		if (typeof Storage !== 'undefined') {
+			if (window.sessionStorage.getItem($itemName) !== 'null' &&
+				window.sessionStorage.getItem($itemName) !== null
+			) {
+				window.sessionStorage.removeItem($itemName);
+			}
+		}
+	}
 })(jQuery);
