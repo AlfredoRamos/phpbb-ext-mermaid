@@ -3,3 +3,9 @@ services:
         class: alfredoramos\mermaid\event\listener
         tags:
             - { name: event.listener }
+
+    alfredoramos.mermaid.controller:
+        class: alfredoramos\mermaid\controller\mermaid
+        arguments:
+            - '@controller.helper'
+            - '@language'

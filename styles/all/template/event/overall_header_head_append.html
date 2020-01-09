@@ -1,5 +1,9 @@
 {% if not INCLUDED_MERMAID_CSS %}
 {% INCLUDECSS '@alfredoramos_mermaid/css/common.css' %}
 {% INCLUDECSS '@alfredoramos_mermaid/css/mermaid.css' %}
+{%- if S_USER_LOGGED_IN and not S_IS_BOT -%}
+{% INCLUDECSS '@alfredoramos_mermaid/css/jquery.modal.min.css' %}
+{% INCLUDECSS '@alfredoramos_mermaid/css/live_editor.css' %}
+{%- endif -%}
 {%- set INCLUDED_MERMAID_CSS = true -%}
 {% endif %}
