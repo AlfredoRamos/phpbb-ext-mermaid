@@ -32,7 +32,7 @@
 		var $text = $(this).val().trim();
 		var $cssClass = 'mermaid';
 		var $container = $(this).parents('.' + $cssClass + '-editor').first()
-			.find('.' + $cssClass + '-preview > div').first();
+			.find('.' + $cssClass + '-preview > figure').first();
 		var $errors = $('.mermaid-errors').first();
 
 		// Cleanup
@@ -63,12 +63,24 @@
 
 					// Add SVG code
 					$container.html($html);
+
+					// Keep attribute helper
+					if ($container.html().length <= 0) {
+						$container.removeAttr('data-processed');
+					} else {
+						$container.attr('data-processed', true);
+					}
 				});
 			} catch ($error) {
 				// Show parse errors
 				if ($error && $errors.length > 0) {
 					$errors.html($error);
 					$errors.fadeIn('fast');
+
+					// Reset
+					$container.html('');
+					$container.removeClass($cssClass);
+					$container.removeAttr('data-processed');
 				}
 			}
 		}, 250);

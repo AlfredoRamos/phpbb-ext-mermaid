@@ -43,7 +43,7 @@ class listener implements EventSubscriberInterface
 		{
 			$configurator->BBCodes->addCustom(
 				'[mermaid #disableAutoLineBreaks=true #createParagraphs=false #ignoreTags=true]{TEXT}[/mermaid]',
-				'<div class="mermaid">{TEXT}</div>'
+				'<figure class="mermaid">{TEXT}</figure>'
 			);
 		}
 	}

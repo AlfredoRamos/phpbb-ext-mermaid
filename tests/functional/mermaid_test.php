@@ -51,11 +51,11 @@ EOT;
 		));
 
 		$expected = <<<EOT
-<div class="mermaid">graph TD;
+<figure class="mermaid">graph TD;
     A--&gt;B;
     A--&gt;C;
     B--&gt;D;
-    C--&gt;D;</div>
+    C--&gt;D;</figure>
 EOT;
 
 		$result = $crawler->filter(sprintf(

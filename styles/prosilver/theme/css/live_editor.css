@@ -45,22 +45,50 @@
 	font-weight: bold;
 }
 
+.mermaid-title,
+.mermaid-subtitle::after,
+.mermaid-code {
+	border-color: #e1e4e8;
+}
+
 .mermaid-title {
 	font-size: 1.17em;
+	border-width: 0 0 1px;
+	border-style: solid;
+	padding-bottom: 10px;
 }
 
 .mermaid-subtitle {
 	font-size: 1em;
 }
 
+.mermaid-subtitle::after {
+	content: ' ';
+	display: block;
+	border-width: 0 0 1px;
+	border-style: solid;
+	margin-top: -8px;
+}
+
+.mermaid-subtitle > span {
+	background-color: #fff;
+	padding-right: 10px;
+}
+
 .mermaid-code {
 	flex: 0 0 33.333333%;
 	max-width: 33.333333%;
+	border-width: 0 1px 0 0;
+	border-style: solid;
 }
 
 .mermaid-preview {
 	flex: 0 0 66.666667%;
 	max-width: 66.666667%;
+}
+
+.mermaid-preview .mermaid {
+	font-size: 13px;
 }
 
 .mermaid-errors {
@@ -99,7 +127,6 @@
 	border: 1px solid transparent;
 	padding: 6px 12px;
 	border-radius: 4px;
-	font-size: 1.2em;
 }
 .btn-insert,
 .btn-clear {
