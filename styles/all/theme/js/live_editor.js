@@ -130,8 +130,6 @@
 
 	// Load diagram code from sessionStorage
 	$(document.body).on($.modal.BEFORE_OPEN, '.mermaid-live-editor', function() {
-		console.log('before open');
-
 		// Check if sessionStorage is available
 		if (typeof Storage === 'undefined') {
 			return;
@@ -152,8 +150,6 @@
 
 	// Save diagram code to sessionStorage
 	$(document.body).on($.modal.BEFORE_CLOSE, '.mermaid-live-editor', function() {
-		console.log('before close');
-
 		// Check if sessionStorage is available
 		if (typeof Storage === 'undefined') {
 			return;
