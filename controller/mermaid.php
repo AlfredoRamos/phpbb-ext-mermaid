@@ -79,6 +79,6 @@ class mermaid
 		$this->language->add_lang('viewtopic');
 		$this->language->add_lang('controller', 'alfredoramos/mermaid');
 
-		return $this->helper->render('mermaid_live_editor.html');
+		return $this->helper->render('mermaid_editor.html');
 	}
 }
