@@ -1,3 +1,3 @@
-<button type="button" class="button button-icon-only bbcode-mermaid" name="addmermaid" value="{{ lang('MERMAID')|striptags|escape }}" onclick="bbfontstyle('[mermaid]', '[/mermaid]');" title="{{ lang('MERMAID_HELPLINE')|striptags|escape }}" accesskey="m">
+<button type="button" class="button button-icon-only bbcode-mermaid" name="addmermaid" value="{{ lang('MERMAID')|striptags|escape }}" onclick="bbfontstyle('[mermaid]', '[/mermaid]');" title="{{ lang('MERMAID_HELPLINE')|striptags|escape }}" accesskey="m"{% if MERMAID_EDITOR_URL %} data-editor-url="{{ MERMAID_EDITOR_URL }}"{% endif %}>
 	<i class="icon fa-fw fa-sitemap" aria-hidden="true"></i>
 </button>

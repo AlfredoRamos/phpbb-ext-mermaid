@@ -1,12 +1,16 @@
 services:
     alfredoramos.mermaid.listener:
         class: alfredoramos\mermaid\event\listener
+        arguments:
+            - '@template'
+            - '@routing.helper'
         tags:
             - { name: event.listener }
 
     alfredoramos.mermaid.controller:
         class: alfredoramos\mermaid\controller\mermaid
         arguments:
+            - '@user'
             - '@request'
             - '@controller.helper'
             - '@language'

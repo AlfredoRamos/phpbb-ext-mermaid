@@ -20,9 +20,30 @@
 	// Get modal box template
 	$(document.body).on('contextmenu', '.bbcode-mermaid', function($event) {
 		$event.preventDefault();
+		var $editorUrl = $(this).attr('data-editor-url').trim();
 
-		$.get('/forum/app.php/mermaid/editor', function(html) {
-			$(html).appendTo('body').modal();
+		// Editor URL is mandatory
+		if ($editorUrl.length <= 0) {
+			return;
+		}
+
+		// Get template
+		$.ajax({
+			url: $editorUrl
+		}).done(function($data) {
+			// Show modal box
+			$($data).appendTo('body').modal();
+		}).fail(function($data, $textStatus, $error) {
+			try {
+				// Parse JSON response
+				var $responseBody = $.parseJSON($data.responseText);
+
+				// Show error message
+				phpbb.alert($error, $responseBody.message);
+			} catch ($ex) {
+				// Show exception message
+				phpbb.alert($ex.name, $ex.message);
+			}
 		});
 	});
 
