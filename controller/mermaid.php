@@ -65,7 +65,7 @@ class mermaid
 		// Security hash
 		$hash = trim($hash);
 
-		// Hash must match and user must be logged in
+		// CSRF protection and user verification
 		if (
 			empty($hash) ||
 			!check_link_hash($hash, 'mermaid_editor') ||
