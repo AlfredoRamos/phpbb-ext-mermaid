@@ -20,6 +20,8 @@
 	// Get modal box template
 	$(document.body).on('contextmenu', '.bbcode-mermaid', function($event) {
 		$event.preventDefault();
+
+		// Get editor URL
 		var $editorUrl = $(this).attr('data-editor-url').trim();
 
 		// Editor URL is mandatory
@@ -56,7 +58,8 @@
 		var $cssClass = 'mermaid';
 		var $container = $(this).parents('.' + $cssClass + '-editor').first()
 			.find('.' + $cssClass + '-preview > figure').first();
-		var $errors = $('.mermaid-errors').first();
+		var $errors = $(this).parents('.' + $cssClass + '-editor').first()
+			.find('.mermaid-errors').first();
 
 		// Cleanup
 		$errors.fadeOut('fast');
@@ -132,6 +135,9 @@
 
 		// Add text to message
 		insert_text('[mermaid]' + $text + '[/mermaid]');
+
+		// Close modal box
+		$.modal.getCurrent().close();
 	});
 
 	// Clear button
@@ -142,6 +148,15 @@
 		// Clear textarea
 		$code.val('');
 		$code.trigger('input');
+
+		// Clear session data
+		if (typeof Storage !== 'undefined') {
+			if (window.sessionStorage.getItem($itemName) !== 'null' &&
+				window.sessionStorage.getItem($itemName) !== null
+			) {
+				window.sessionStorage.removeItem($itemName);
+			}
+		}
 	});
 
 	// Cancel button
