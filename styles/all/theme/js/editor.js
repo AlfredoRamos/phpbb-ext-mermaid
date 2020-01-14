@@ -49,6 +49,60 @@
 		});
 	});
 
+	// Open modal box event
+	$(document.body).on($.modal.BEFORE_OPEN, '.mermaid-live-editor', function() {
+		// Check if sessionStorage is available
+		if (typeof Storage === 'undefined') {
+			return;
+		}
+
+		// Load diagram code from sessionStorage
+		if (window.sessionStorage.getItem($itemName) !== 'null' &&
+			window.sessionStorage.getItem($itemName) !== null
+		)
+		{
+			var $code = $(this).find('#mermaid-text').first();
+
+			if ($code.length > 0) {
+				$code.val(window.sessionStorage.getItem($itemName));
+				$code.trigger('input');
+			}
+		}
+	});
+
+	// Close modal box event
+	$(document.body).on($.modal.BEFORE_CLOSE, '.mermaid-live-editor', function() {
+		// Check if sessionStorage is available
+		if (typeof Storage === 'undefined') {
+			return;
+		}
+
+		var $code = $(this).find('#mermaid-text').first();
+		var $svg = $(this).find('.mermaid-preview > figure.mermaid').first();
+		var $text = '';
+
+		// Check if SVG was generated
+		if ($code.length > 0 && $svg.length && $svg.data('processed') === true) {
+			$text = $code.val().trim();
+		}
+
+		// Save session data
+		if ($text > 0) {
+			window.sessionStorage.setItem($itemName, $text);
+		}
+
+		// Remove empty SVG containers
+		$.each($('div[id^="dmermaid-"]'), function() {
+			// Look for empty nodes
+			if (!$(this).children('svg[id^="mermaid-"]').children().is(':empty')) {
+				return;
+			}
+
+			// Remove container
+			$(this).remove();
+		});
+	});
+
 	// Generate preview
 	$(document.body).on('input', '#mermaid-text', function() {
 		clearTimeout($timer);
@@ -162,51 +216,6 @@
 	// Cancel button
 	$(document.body).on('click', '.btn-mermaid.btn-cancel', function() {
 		$.modal.getCurrent().close();
-	});
-
-	// Load diagram code from sessionStorage
-	$(document.body).on($.modal.BEFORE_OPEN, '.mermaid-live-editor', function() {
-		// Check if sessionStorage is available
-		if (typeof Storage === 'undefined') {
-			return;
-		}
-
-		if (window.sessionStorage.getItem($itemName) !== 'null' &&
-			window.sessionStorage.getItem($itemName) !== null
-		)
-		{
-			var $code = $(this).find('#mermaid-text').first();
-
-			if ($code.length > 0) {
-				$code.val(window.sessionStorage.getItem($itemName));
-				$code.trigger('input');
-			}
-		}
-	});
-
-	// Save diagram code to sessionStorage
-	$(document.body).on($.modal.BEFORE_CLOSE, '.mermaid-live-editor', function() {
-		// Check if sessionStorage is available
-		if (typeof Storage === 'undefined') {
-			return;
-		}
-
-		var $code = $(this).find('#mermaid-text').first();
-		var $svg = $(this).find('.mermaid-preview > figure.mermaid').first();
-		var $text = '';
-
-		// Check if SVG was generated
-		if ($code.length > 0 && $svg.length && $svg.data('processed') === true) {
-			$text = $code.val().trim();
-		}
-
-		// Check if text is available
-		if ($text <= 0) {
-			return;
-		}
-
-		// Save session data
-		window.sessionStorage.setItem($itemName, $text);
 	});
 
 	// Remove session data
