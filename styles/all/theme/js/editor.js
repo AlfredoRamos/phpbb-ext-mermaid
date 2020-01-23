@@ -87,7 +87,7 @@
 		}
 
 		// Save session data
-		if ($text > 0) {
+		if ($text.length > 0) {
 			window.sessionStorage.setItem($itemName, $text);
 		}
 
@@ -183,7 +183,7 @@
 		}
 
 		// Check if text is available
-		if ($text <= 0) {
+		if ($text.length <= 0) {
 			return;
 		}
 
