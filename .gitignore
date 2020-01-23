@@ -2,5 +2,5 @@ build/
 vendor/
 .bundle/
 composer.lock
-.DS_Store
 Gemfile.lock
+*.tmp

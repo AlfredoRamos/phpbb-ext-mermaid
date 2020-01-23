@@ -1,0 +1,185 @@
+/**
+ * Mermaid Diagrams extension for phpBB.
+ * @author Alfredo Ramos <alfredo.ramos@yandex.com>
+ * @copyright 2019 Alfredo Ramos
+ * @license GPL-2.0-only
+ */
+.mermaid-live-editor {
+	font-size: 15px;
+	padding: 10px 20px;
+	min-width: 100%;
+	width: 100%;
+}
+
+.mermaid-editor {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+.mermaid-editor * {
+	box-sizing: border-box;
+}
+
+.mermaid-editor,
+.mermaid-code,
+.mermaid-preview {
+	overflow: hidden;
+}
+
+.mermaid-code,
+.mermaid-preview {
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-bottom: 15px;
+}
+
+.mermaid-title,
+.mermaid-subtitle {
+	float: none !important;
+	margin: 0 0 1em !important;
+	border: none;
+	padding: 0;
+	text-transform: none;
+	line-height: 1em;
+	color: currentColor;
+	font-weight: bold;
+}
+
+.mermaid-title,
+.mermaid-subtitle::after,
+.mermaid-code {
+	border-color: #e1e4e8;
+}
+
+.mermaid-title {
+	font-size: 1.17em;
+	border-width: 0 0 1px;
+	border-style: solid;
+	padding-bottom: 10px;
+}
+
+.mermaid-subtitle {
+	font-size: 1em;
+}
+
+.mermaid-subtitle::after {
+	content: ' ';
+	display: block;
+	border-width: 0 0 1px;
+	border-style: solid;
+	margin-top: -8px;
+}
+
+.mermaid-subtitle > span {
+	background-color: #fff;
+	padding-right: 10px;
+}
+
+.mermaid-code {
+	-ms-flex: 0 0 33.333333%;
+	flex: 0 0 33.333333%;
+	max-width: 33.333333%;
+	border-width: 0 1px 0 0;
+	border-style: solid;
+}
+
+.mermaid-preview {
+	-ms-flex: 0 0 66.666667%;
+	flex: 0 0 66.666667%;
+	max-width: 66.666667%;
+}
+
+@media (max-width: 700px) {
+	.mermaid-code,
+	.mermaid-preview {
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
+
+.mermaid-preview .mermaid {
+	font-size: 13px;
+}
+
+.mermaid-errors {
+	color: #721c24;
+	background-color: #f8d7da;
+	border: 1px solid #f5c6cb;
+	padding: 5px 10px;
+	border-radius: 4px;
+	white-space: pre-line;
+	word-wrap: break-word;
+	word-break: break-word;
+}
+
+.mermaid-actions {
+	text-align: center;
+}
+
+#mermaid-text {
+	font-family: Monaco, 'Andale Mono','Courier New', Courier, monospace;
+	width: 100%;
+	min-height: 100px;
+	height: 250px;
+	max-height: 310px;
+	resize: vertical;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: #fcfcfc;
+	padding: 5px 10px;
+}
+
+.btn-mermaid {
+	font-weight: 400;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid transparent;
+	padding: 6px 12px;
+	border-radius: 4px;
+}
+
+.btn-mermaid[disabled] {
+	cursor: not-allowed;
+}
+
+.btn-insert,
+.btn-clear {
+	color: #fff;
+}
+
+.btn-insert {
+	background-color: #28a745;
+	border-color: #28a745;
+}
+
+.btn-insert:hover {
+	background-color: #218838;
+	border-color: #1e7e34;
+}
+
+.btn-clear {
+	background-color: #dc3545;
+	border-color: #dc3545;
+}
+
+.btn-clear:hover {
+	background-color: #c82333;
+	border-color: #bd2130;
+}
+
+.btn-cancel {
+	color: #212529;
+	background-color: #ffc107;
+	border-color: #ffc107;
+}
+
+.btn-cancel:hover {
+	background-color: #e0a800;
+	border-color: #d39e00;
+}

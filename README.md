@@ -24,7 +24,7 @@ Mermaid Diagrams extension for phpBB.
 
 Generate diagrams and flowcharts from text in a similar manner as markdown.
 
-It uses the [mermaid](https://github.com/knsv/mermaid) library to generate the SVG markup and supports all diagrams available, which currently are:
+It uses the [mermaid](https://github.com/mermaid-js/mermaid) library to generate the SVG markup and supports all diagrams available, which currently are:
 
 - Flowchart
 - Sequence diagram
@@ -46,6 +46,7 @@ You can read more about the supported syntax in the official documentation:
 [![Class diagram](https://i.imgur.com/iHEDfxQb.png)](https://i.imgur.com/iHEDfxQ.png)
 [![State diagram](https://i.imgur.com/hDGmUm9b.png)](https://i.imgur.com/hDGmUm9.png)
 [![Pie chart](https://i.imgur.com/WP7uiQwb.png)](https://i.imgur.com/WP7uiQw.png)
+[![Live editor](https://i.imgur.com/ePzD62Zb.png)](https://i.imgur.com/ePzD62Z.png)
 
 *(Click to view in full size)*
 

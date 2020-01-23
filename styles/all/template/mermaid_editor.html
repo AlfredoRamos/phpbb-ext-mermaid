@@ -1,0 +1,28 @@
+<div class="modal mermaid-live-editor">
+	<h3 class="mermaid-title">{{ lang('MERMAID_LIVE_EDITOR') }}</h3>
+	<div class="mermaid-editor">
+		<div class="mermaid-code">
+			<h4 class="mermaid-subtitle"><span>{{ lang('CODE') }}</span></h4>
+			<textarea id="mermaid-text"></textarea>
+		</div>
+		<div class="mermaid-preview">
+			<h4 class="mermaid-subtitle"><span>{{ lang('PREVIEW') }}</span></h4>
+			<div class="mermaid-errors hidden"></div>
+			<figure>{# placeholder #}</figure>
+		</div>
+	</div>
+	<div class="mermaid-actions">
+		<button type="button" class="btn-mermaid btn-insert">
+			<i class="icon fa-fw fa-reply" aria-hidden="true"></i>
+			{{ lang('MERMAID_INSERT') }}
+		</button>
+		<button type="button" class="btn-mermaid btn-clear">
+			<i class="icon fa-fw fa-trash" aria-hidden="true"></i>
+			{{ lang('MERMAID_CLEAR') }}
+		</button>
+		<button type="button" class="btn-mermaid btn-cancel">
+			<i class="icon fa-fw fa-eraser" aria-hidden="true"></i>
+			{{ lang('MERMAID_CANCEL') }}
+		</button>
+	</div>
+</div>

@@ -7,12 +7,14 @@
 .mermaid {
 	margin: 1em 0;
 }
+
 .mermaid:not([data-processed="true"]) {
 	font-family: Monaco, "Andale Mono","Courier New", Courier, monospace;
 	background-color: #f9f9f9;
 	border: 1px solid #ccc;
 	padding: 5px 10px;
 }
+
 .bbcode-mermaid.abbc3_button {
 	background-image: url('../../../all/theme/images/load-balancer.svg');
 	background-size: 85%;
