@@ -14,15 +14,15 @@
 	}
 
 	// Global variables
-	var $timer = null;
-	var $itemName = 'mermaid_code';
+	let $timer = null;
+	const $itemName = 'mermaid_code';
 
 	// Get modal box template
 	$(document.body).on('contextmenu', '.bbcode-mermaid', function($event) {
 		$event.preventDefault();
 
 		// Get editor URL
-		var $editorUrl = $(this).attr('data-editor-url').trim();
+		let $editorUrl = $(this).attr('data-editor-url').trim();
 
 		// Editor URL is mandatory
 		if ($editorUrl.length <= 0) {
@@ -38,7 +38,7 @@
 		}).fail(function($data, $textStatus, $error) {
 			try {
 				// Parse JSON response
-				var $responseBody = $.parseJSON($data.responseText);
+				let $responseBody = $.parseJSON($data.responseText);
 
 				// Show error message
 				phpbb.alert($error, $responseBody.message);
@@ -61,7 +61,7 @@
 			window.sessionStorage.getItem($itemName) !== null
 		)
 		{
-			var $code = $(this).find('#mermaid-text').first();
+			let $code = $(this).find('#mermaid-text').first();
 
 			if ($code.length > 0) {
 				$code.val(window.sessionStorage.getItem($itemName));
@@ -77,9 +77,9 @@
 			return;
 		}
 
-		var $code = $(this).find('#mermaid-text').first();
-		var $svg = $(this).find('.mermaid-preview > figure.mermaid').first();
-		var $text = '';
+		let $code = $(this).find('#mermaid-text').first();
+		let $svg = $(this).find('.mermaid-preview > figure.mermaid').first();
+		let $text = '';
 
 		// Check if SVG was generated
 		if ($code.length > 0 && $svg.length && $svg.data('processed') === true) {
@@ -108,11 +108,11 @@
 		clearTimeout($timer);
 
 		// Helpers
-		var $text = $(this).val().trim();
-		var $cssClass = 'mermaid';
-		var $container = $(this).parents('.' + $cssClass + '-editor').first()
+		let $text = $(this).val().trim();
+		let $cssClass = 'mermaid';
+		let $container = $(this).parents('.' + $cssClass + '-editor').first()
 			.find('.' + $cssClass + '-preview > figure').first();
-		var $errors = $(this).parents('.' + $cssClass + '-editor').first()
+		let $errors = $(this).parents('.' + $cssClass + '-editor').first()
 			.find('.mermaid-errors').first();
 
 		// Cleanup
@@ -168,11 +168,11 @@
 
 	// Insert button
 	$(document.body).on('click', '.btn-mermaid.btn-insert', function() {
-		var $code = $(this).parents('.mermaid-live-editor').first()
+		let $code = $(this).parents('.mermaid-live-editor').first()
 			.find('#mermaid-text').first();
-		var $svg = $(this).parents('.mermaid-live-editor').first()
+		let $svg = $(this).parents('.mermaid-live-editor').first()
 			.find('.mermaid-preview > figure.mermaid').first();
-		var $text = '';
+		let $text = '';
 
 		// Check if SVG was generated
 		if ($code.length > 0 && $svg.length && $svg.data('processed') === true) {
@@ -196,7 +196,7 @@
 
 	// Clear button
 	$(document.body).on('click', '.btn-mermaid.btn-clear', function() {
-		var $code = $(this).parents('.mermaid-live-editor').first()
+		let $code = $(this).parents('.mermaid-live-editor').first()
 			.find('#mermaid-text').first();
 
 		// Clear textarea
