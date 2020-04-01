@@ -4,6 +4,7 @@ Mermaid Diagrams extension for phpBB.
 
 [![Build Status](https://img.shields.io/travis/com/AlfredoRamos/phpbb-ext-mermaid.svg?style=flat-square)](https://travis-ci.com/AlfredoRamos/phpbb-ext-mermaid)
 [![Latest Stable Version](https://img.shields.io/github/tag/AlfredoRamos/phpbb-ext-mermaid.svg?label=stable&style=flat-square)](https://github.com/AlfredoRamos/phpbb-ext-mermaid/releases)
+[![Code Quality](https://img.shields.io/codefactor/grade/github/AlfredoRamos/phpbb-ext-mermaid.svg?style=flat-square)](https://www.codefactor.io/repository/github/alfredoramos/phpbb-ext-mermaid)
 [![License](https://img.shields.io/github/license/AlfredoRamos/phpbb-ext-mermaid.svg?style=flat-square)](https://raw.githubusercontent.com/AlfredoRamos/phpbb-ext-mermaid/master/license.txt)
 
 ### Dependencies
