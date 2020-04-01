@@ -1,3 +1,0 @@
-alfredoramos_mermaid_editor:
-    path: /mermaid/editor/{hash}
-    defaults: { _controller: alfredoramos.mermaid.controller:editor, hash: '' }

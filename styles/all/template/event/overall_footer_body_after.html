@@ -1,16 +1,8 @@
 {% if not INCLUDED_MERMAID_JS %}
 {%- if S_ALLOW_CDN -%}
-{% INCLUDEJS 'https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js' %}
+{% INCLUDEJS 'https://unpkg.com/mermaid@8.4.8/dist/mermaid.min.js' %}
 {%- else -%}
 {% INCLUDEJS '@alfredoramos_mermaid/js/mermaid.min.js' %}
-{%- endif -%}
-{%- if S_USER_LOGGED_IN and not S_IS_BOT -%}
-{%- if S_ALLOW_CDN -%}
-{% INCLUDEJS 'https://unpkg.com/jquery-modal@0.9.2/jquery.modal.min.js' %}
-{%- else -%}
-{% INCLUDEJS '@alfredoramos_mermaid/js/jquery.modal.min.js' %}
-{%- endif -%}
-{% INCLUDEJS '@alfredoramos_mermaid/js/editor.js' %}
 {%- endif -%}
 {%- set INCLUDED_MERMAID_JS = true -%}
 {% endif %}

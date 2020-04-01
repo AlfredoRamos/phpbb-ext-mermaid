@@ -25,5 +25,6 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, [
 	'MERMAID' => 'Mermaid',
-	'MERMAID_HELPLINE' => 'Mermaid diagram: [mermaid]diagram code[/mermaid]'
+	'MERMAID_HELPLINE' => 'Mermaid diagram: [mermaid]diagram code[/mermaid]',
+	'MERMAID_LIVE_EDITOR' => 'Mermaid live editor'
 ]);
