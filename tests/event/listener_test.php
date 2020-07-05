@@ -10,6 +10,8 @@
 namespace alfredoramos\mermaid\tests\event;
 
 use phpbb_test_case;
+use phpbb\config\config;
+use phpbb\template\template;
 use alfredoramos\mermaid\event\listener;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -18,11 +20,26 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class listener_test extends phpbb_test_case
 {
+	protected $config;
+	protected $template;
+
+	public function setUp(): void
+	{
+		parent::setUp();
+
+		$this->config = $this->getMockBuilder(config::class)
+			->disableOriginalConstructor()->getMock();
+		$this->template = $this->getMockBuilder(template::class)->getMock();
+	}
+
 	public function test_instance()
 	{
 		$this->assertInstanceOf(
 			EventSubscriberInterface::class,
-			new listener
+			new listener(
+				$this->config,
+				$this->template
+			)
 		);
 	}
 
@@ -31,6 +48,7 @@ class listener_test extends phpbb_test_case
 		$this->assertSame(
 			[
 				'core.user_setup',
+				'core.user_setup_after',
 				'core.text_formatter_s9e_configure_after'
 			],
 			array_keys(listener::getSubscribedEvents())

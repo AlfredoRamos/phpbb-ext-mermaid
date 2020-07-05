@@ -14,6 +14,7 @@
 		"sequence-diagram",
 		"gantt-diagram",
 		"class-diagram",
+		"entity-relationship-diagram",
 		"state-diagram",
 		"git-graph",
 		"pie-chart"

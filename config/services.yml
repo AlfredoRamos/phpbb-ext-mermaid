@@ -1,5 +1,8 @@
 services:
     alfredoramos.mermaid.listener:
         class: alfredoramos\mermaid\event\listener
+        arguments:
+            - '@config'
+            - '@template'
         tags:
             - { name: event.listener }
