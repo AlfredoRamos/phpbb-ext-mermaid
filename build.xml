@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Mermaid Diagrams Extension Builder" description="Builds an extension.zip from a git repository" default="all">
+	<property name="env" value="production" />
 	<property name="vendor-name" value="alfredoramos" />
 	<property name="extension-name" value="mermaid" />
 	<!--
@@ -14,6 +15,8 @@
 	example: ext/${vendor-name}/${extension-name}/
 	-->
 	<target name="clean-package">
+		<echo msg="Cleaning files and directories" />
+
 		<delete dir="${dir}/tests" />
 		<delete dir="${dir}/travis" />
 		<delete dir="${dir}/.github"/>
@@ -39,6 +42,12 @@
 	<!-- Clean up the build directory -->
 	<target name="clean">
 		<delete dir="${build-directory}" />
+	</target>
+
+	<!-- Minify CSS and JS assets -->
+	<target name="minify-assets">
+		<echo msg="Minifying assets" />
+		<exec command="bundle exec rake build:all" checkreturn="true" />
 	</target>
 
 	<!-- Recreate the necessary folders -->
@@ -76,6 +85,14 @@
 			command='php -r "\$j = json_decode(file_get_contents(\"composer.json\")); echo (isset(\$j->version) ? \$j->version : \"${version}\");"'
 			checkreturn="true"
 			outputProperty='package-version' />
+
+		<!-- Build and ninify assets -->
+		<if>
+			<equals arg1="${env}" arg2="production" />
+			<then>
+				<phingcall target="minify-assets" />
+			</then>
+		</if>
 
 		<phingcall target="wrap-package">
 			<property name="destination-filename" value="${build-directory}/upload/${vendor-name}_${extension-name}_${package-version}" />
