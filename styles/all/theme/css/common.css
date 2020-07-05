@@ -8,7 +8,11 @@
 	white-space: pre;
 }
 
-.mermaid > svg {
+.mermaid svg {
 	max-width: 100%;
 	height: auto;
+}
+
+.mermaid-status .icon {
+	font-size: 1em;
 }

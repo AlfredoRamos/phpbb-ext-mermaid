@@ -11,7 +11,7 @@ Allows you to generate diagrams and flowcharts from text in a similar manner as 
 
 It uses the [mermaid](https://github.com/mermaid-js/mermaid) library to generate the SVG markup and supports all diagrams available. You can read more about the supported syntax in the official documentation:
 
-- [mermaid](https://mermaid-js.github.io)
+- [mermaid](https://mermaid-js.github.io/mermaid/)
 
 ### Features
 
@@ -21,6 +21,7 @@ It uses the [mermaid](https://github.com/mermaid-js/mermaid) library to generate
 	- Flowchart
 	- Sequence diagram
 	- Class diagram
+	- Entity relationship diagram
 	- State diagram
 	- Gantt diagram
 	- Git graph
@@ -60,6 +61,7 @@ If you like or found my work useful and want to show some appreciation, you can 
 [![Sequence diagram](https://i.imgur.com/QPVhPuhb.png)](https://i.imgur.com/QPVhPuh.png)
 [![Gantt diagram](https://i.imgur.com/C1qOugrb.png)](https://i.imgur.com/C1qOugr.png)
 [![Class diagram](https://i.imgur.com/iHEDfxQb.png)](https://i.imgur.com/iHEDfxQ.png)
+[![Entity relationship diagram](https://i.imgur.com/jbZzc2Pb.png)](https://i.imgur.com/jbZzc2P.png)
 [![State diagram](https://i.imgur.com/hDGmUm9b.png)](https://i.imgur.com/hDGmUm9.png)
 [![Pie chart](https://i.imgur.com/WP7uiQwb.png)](https://i.imgur.com/WP7uiQw.png)
 
