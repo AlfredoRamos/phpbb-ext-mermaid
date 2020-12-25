@@ -9,7 +9,6 @@
 
 namespace alfredoramos\mermaid\tests\event;
 
-use phpbb_test_case;
 use phpbb\config\config;
 use phpbb\template\template;
 use alfredoramos\mermaid\event\listener;
@@ -18,15 +17,14 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 /**
  * @group event
  */
-class listener_test extends phpbb_test_case
+class listener_test extends \phpbb_test_case
 {
 	protected $config;
 	protected $template;
 
-	public function setUp(): void
+	protected function setUp(): void
 	{
 		parent::setUp();
-
 		$this->config = $this->getMockBuilder(config::class)
 			->disableOriginalConstructor()->getMock();
 		$this->template = $this->getMockBuilder(template::class)->getMock();
