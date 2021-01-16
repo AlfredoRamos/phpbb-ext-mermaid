@@ -15,17 +15,17 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class listener implements EventSubscriberInterface
 {
-	/** @var \phpbb\config\config */
+	/** @var config */
 	protected $config;
 
-	/** @var \phpbb\template\template */
+	/** @var template */
 	protected $template;
 
 	/**
 	 * Event constructor.
 	 *
-	 * @param \phpbb\config\config		$config
-	 * @param \phpbb\template\template	$template
+	 * @param config	$config
+	 * @param template	$template
 	 *
 	 * @return void
 	 */
