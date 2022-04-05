@@ -3,9 +3,12 @@ tests/ export-ignore
 .github/ export-ignore
 phpunit.xml.dist export-ignore
 build.xml export-ignore
+package.json export-ignore
+package-lock.json export-ignore
+postcss.config.js export-ignore
 .rubocop.yml export-ignore
 .gitignore export-ignore
 .gitattributes export-ignore
+.editorconfig export-ignore
+.stylelintrc.json export-ignore
 *.md export-ignore
-Gemfile export-ignore
-Rakefile export-ignore
