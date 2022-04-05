@@ -1,6 +1,6 @@
 {% if not INCLUDED_MERMAID_JS %}
 {%- if S_ALLOW_CDN -%}
-{% INCLUDEJS 'https://unpkg.com/mermaid@8.9.0/dist/mermaid.min.js' %}
+{% INCLUDEJS 'https://unpkg.com/mermaid@8.14.0/dist/mermaid.min.js' %}
 {%- else -%}
 {% INCLUDEJS '@alfredoramos_mermaid/js/mermaid.min.js' %}
 {%- endif -%}
