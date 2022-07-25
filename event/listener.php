@@ -97,7 +97,7 @@ class listener implements EventSubscriberInterface
 		$mermaid = [
 			'bbcode_tag'	=> 'mermaid',
 			'bbcode_match'	=> '[mermaid #disableAutoLineBreaks=true #createParagraphs=false #ignoreTags=true]{TEXT}[/mermaid]',
-			'bbcode_tpl'	=> '<figure class="mermaid">{TEXT}</figure>'
+			'bbcode_tpl'	=> '<figure class="mermaid">{TEXT}</figure><div class="mermaidTooltip"></div>'
 		];
 
 		// Remove previous definitions
