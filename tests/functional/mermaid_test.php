@@ -47,13 +47,28 @@ EOT;
 			$this->sid
 		));
 
-		$expected = <<<EOT
+		if (version_compare(PHP_VERSION, '7.3.0', '<'))
+		{
+			$expected = <<<EOT
+<div class="mermaid-wrapper">
 <figure class="mermaid">graph TD;
     A--&gt;B;
     A--&gt;C;
     B--&gt;D;
-    C--&gt;D;</figure>
+    C--&gt;D;</figure><div class="mermaidTooltip"></div>
+</div>
 EOT;
+		}
+		else
+		{
+			$expected = <<<EOT
+<div class="mermaid-wrapper"><figure class="mermaid">graph TD;
+    A--&gt;B;
+    A--&gt;C;
+    B--&gt;D;
+    C--&gt;D;</figure><div class="mermaidTooltip"></div></div>
+EOT;
+		}
 
 		$result = $crawler->filter(sprintf(
 			'#post_content%d .content',
