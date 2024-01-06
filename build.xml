@@ -20,12 +20,14 @@
 		<delete dir="${dir}/tests" />
 		<delete dir="${dir}/node_modules" />
 		<delete dir="${dir}/.github"/>
+		<delete dir="${dir}/.vscode"/>
 		<delete file="${dir}/.gitignore" />
 		<delete file="${dir}/.gitattributes" />
 		<delete file="${dir}/.editorconfig" />
 		<delete file="${dir}/.stylelintrc.json" />
-		<delete file="${dir}/.rubocop.yml" />
+		<delete file="${dir}/.tool-versions" />
 		<delete file="${dir}/build.xml" />
+		<delete file="${dir}/crowdin.yml" />
 		<delete file="${dir}/phpunit.xml.dist" />
 		<delete file="${dir}/README.md" />
 		<delete file="${dir}/package.json" />
@@ -47,6 +49,9 @@
 	<property name="version" value="HEAD" override="true" />
 	<property name="build-directory" value="build" override="true" />
 	<property name="package-directory" value="${build-directory}/package/${vendor-name}/${extension-name}" />
+
+	<!-- Remove incomplete translations. -->
+	<property name="exclude-langs" value="" override="true" />
 
 	<!-- These are the main targets which you will probably want to use -->
 	<target name="all" depends="prepare-structure,package" />
@@ -119,7 +124,6 @@
 	<!-- The real packaging -->
 	<target name="package">
 		<echo msg="Extracting ${version}" />
-
 		<phingcall target="git-checkout">
 			<property name="archive-version" value="${version}" />
 		</phingcall>
@@ -146,7 +150,9 @@
 		<if>
 			<equals arg1="${env}" arg2="production" />
 			<then>
-				<phingcall target="minify-assets" />
+				<phingcall target="minify-assets">
+					<property name="dir" value="${package-directory}" />
+				</phingcall>
 			</then>
 		</if>
 
