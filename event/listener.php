@@ -2,7 +2,7 @@
 
 /**
  * Mermaid Diagrams extension for phpBB.
- * @author Alfredo Ramos <alfredo.ramos@skiff.com>
+ * @author Alfredo Ramos <alfredo.ramos@proton.me>
  * @copyright 2019 Alfredo Ramos
  * @license GPL-2.0-only
  */
@@ -73,8 +73,7 @@ class listener implements EventSubscriberInterface
 	 */
 	public function assign_template_variables()
 	{
-		if (empty($this->config['mermaid_live_editor_url']))
-		{
+		if (empty($this->config['mermaid_live_editor_url'])) {
 			return;
 		}
 

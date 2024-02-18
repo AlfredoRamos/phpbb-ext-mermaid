@@ -2,7 +2,7 @@
 
 /**
  * Mermaid Diagrams extension for phpBB.
- * @author Alfredo Ramos <alfredo.ramos@skiff.com>
+ * @author Alfredo Ramos <alfredo.ramos@proton.me>
  * @copyright 2019 Alfredo Ramos
  * @license GPL-2.0-only
  */
@@ -47,8 +47,7 @@ EOT;
 			$this->sid
 		));
 
-		if (version_compare(PHP_VERSION, '7.3.0', '<'))
-		{
+		if (version_compare(PHP_VERSION, '7.3.0', '<')) {
 			$expected = <<<EOT
 <div class="mermaid-wrapper">
 <figure class="mermaid">graph TD;
@@ -58,9 +57,7 @@ EOT;
     C--&gt;D;</figure><div class="mermaidTooltip"></div>
 </div>
 EOT;
-		}
-		else
-		{
+		} else {
 			$expected = <<<EOT
 <div class="mermaid-wrapper"><figure class="mermaid">graph TD;
     A--&gt;B;
