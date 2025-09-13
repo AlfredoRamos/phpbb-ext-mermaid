@@ -5,11 +5,12 @@ Mermaid Diagrams extension for phpBB.
 [![Build Status](https://img.shields.io/github/actions/workflow/status/AlfredoRamos/phpbb-ext-mermaid/ci.yml?style=flat-square)](https://github.com/AlfredoRamos/phpbb-ext-mermaid/actions)
 [![Latest Stable Version](https://img.shields.io/github/tag/AlfredoRamos/phpbb-ext-mermaid.svg?label=stable&style=flat-square)](https://github.com/AlfredoRamos/phpbb-ext-mermaid/releases)
 [![Code Quality](https://img.shields.io/codacy/grade/6ca752c34b9d4b66b7eb1c5de12af765.svg?style=flat-square)](https://app.codacy.com/manual/AlfredoRamos/phpbb-ext-mermaid/dashboard)
+[![Translation Progress](https://badges.crowdin.net/phpbb-ext-mermaid/localized.svg)](https://crowdin.com/project/phpbb-ext-mermaid)
 [![License](https://img.shields.io/github/license/AlfredoRamos/phpbb-ext-mermaid.svg?style=flat-square)](https://raw.githubusercontent.com/AlfredoRamos/phpbb-ext-mermaid/main/license.txt)
 
 Allows you to generate diagrams and flowcharts from text in a similar manner as markdown.
 
-It uses the [mermaid](https://github.com/mermaid-js/mermaid) library to generate the SVG markup and supports all diagrams available. You can read more about the supported syntax in the [official documentation](https://mermaid.js.org/intro/):
+It uses the [Mermaid](https://github.com/mermaid-js/mermaid) library to generate the SVG markup and supports all diagrams available. You can read more about the supported syntax in the [official documentation](https://mermaid.js.org/intro/):
 
 ### Features
 
