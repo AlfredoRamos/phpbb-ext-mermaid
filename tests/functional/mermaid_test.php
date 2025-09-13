@@ -49,7 +49,7 @@ EOT;
 
 		if (version_compare(PHP_VERSION, '7.3.0', '<')) {
 			$expected = <<<EOT
-<div class="mermaid-wrapper">
+<div class="mermaid-container">
 <figure class="mermaid">graph TD;
     A--&gt;B;
     A--&gt;C;
@@ -59,7 +59,7 @@ EOT;
 EOT;
 		} else {
 			$expected = <<<EOT
-<div class="mermaid-wrapper"><figure class="mermaid">graph TD;
+<div class="mermaid-container"><figure class="mermaid">graph TD;
     A--&gt;B;
     A--&gt;C;
     B--&gt;D;

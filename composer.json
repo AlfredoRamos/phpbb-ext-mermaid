@@ -3,8 +3,8 @@
 	"type": "phpbb-extension",
 	"description": "Mermaid Diagrams extension for phpBB",
 	"homepage": "https://github.com/AlfredoRamos/phpbb-ext-mermaid",
-	"version": "0.4.0-dev",
-	"time": "2020-01-23",
+	"version": "1.0.0-dev",
+	"time": "2025-09-10",
 	"keywords": [
 		"phpbb",
 		"extension",
@@ -12,19 +12,32 @@
 		"diagrams",
 		"flowchart",
 		"sequence-diagram",
-		"gantt-diagram",
 		"class-diagram",
-		"entity-relationship-diagram",
 		"state-diagram",
-		"git-graph",
-		"pie-chart"
+		"entity-relationship-diagram",
+		"user-journey",
+		"gantt",
+		"pie-chart",
+		"quadrant-chart",
+		"requirement-diagram",
+		"git-graph-diagram",
+		"c4-diagram",
+		"mindmaps",
+		"timeline",
+		"sankey",
+		"xy-chart",
+		"block-diagram",
+		"packet",
+		"kanban",
+		"architecture",
+		"treemap"
 	],
 	"license": "GPL-2.0-only",
 	"authors": [
 		{
 			"name": "Alfredo Ramos",
 			"email": "alfredo.ramos@proton.me",
-			"homepage": "https://alfredoramos.mx/",
+			"homepage": "https://alfredoramos.mx",
 			"role": "Lead Developer"
 		}
 	],

@@ -2,16 +2,14 @@
 
 Mermaid Diagrams extension for phpBB.
 
-[![Build Status](https://img.shields.io/github/workflow/status/AlfredoRamos/phpbb-ext-mermaid/CI?style=flat-square)](https://github.com/AlfredoRamos/phpbb-ext-mermaid/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/AlfredoRamos/phpbb-ext-mermaid/ci.yml?style=flat-square)](https://github.com/AlfredoRamos/phpbb-ext-mermaid/actions)
 [![Latest Stable Version](https://img.shields.io/github/tag/AlfredoRamos/phpbb-ext-mermaid.svg?label=stable&style=flat-square)](https://github.com/AlfredoRamos/phpbb-ext-mermaid/releases)
 [![Code Quality](https://img.shields.io/codacy/grade/6ca752c34b9d4b66b7eb1c5de12af765.svg?style=flat-square)](https://app.codacy.com/manual/AlfredoRamos/phpbb-ext-mermaid/dashboard)
-[![License](https://img.shields.io/github/license/AlfredoRamos/phpbb-ext-mermaid.svg?style=flat-square)](https://raw.githubusercontent.com/AlfredoRamos/phpbb-ext-mermaid/master/license.txt)
+[![License](https://img.shields.io/github/license/AlfredoRamos/phpbb-ext-mermaid.svg?style=flat-square)](https://raw.githubusercontent.com/AlfredoRamos/phpbb-ext-mermaid/main/license.txt)
 
 Allows you to generate diagrams and flowcharts from text in a similar manner as markdown.
 
-It uses the [mermaid](https://github.com/mermaid-js/mermaid) library to generate the SVG markup and supports all diagrams available. You can read more about the supported syntax in the official documentation:
-
-- [mermaid](https://mermaid-js.github.io/mermaid/)
+It uses the [mermaid](https://github.com/mermaid-js/mermaid) library to generate the SVG markup and supports all diagrams available. You can read more about the supported syntax in the [official documentation](https://mermaid.js.org/intro/):
 
 ### Features
 
@@ -21,11 +19,24 @@ It uses the [mermaid](https://github.com/mermaid-js/mermaid) library to generate
 	- Flowchart
 	- Sequence diagram
 	- Class diagram
-	- Entity relationship diagram
 	- State diagram
-	- Gantt diagram
-	- Git graph
+	- Entity relationship diagram
+	- User journey
+	- Gantt
 	- Pie chart
+	- Quadrant chart
+	- Requirement diagram
+	- Git graph diagram
+	- C4 diagram
+	- Mindmaps
+	- Timeline
+	- Sankey
+	- XY chart
+	- Block diagram
+	- Packet
+	- Kanban
+	- Architecture
+	- Treemap
 - Compatible with [Markdown](https://github.com/AlfredoRamos/phpbb-ext-markdown) extension
 - It doesn't require extra configuration
 
@@ -36,16 +47,18 @@ It uses the [mermaid](https://github.com/mermaid-js/mermaid) library to generate
 
 ### Support
 
-- [**Download page**](https://www.phpbb.com/community/viewtopic.php?t=2527586)
+- [**Download page**](https://www.phpbb.com/customise/db/extension/mermaid/)
+- [Support area](https://www.phpbb.com/customise/db/extension/mermaid/support)
 - [GitHub issues](https://github.com/AlfredoRamos/phpbb-ext-mermaid/issues)
+- [Crowdin translations](https://crowdin.com/project/phpbb-ext-mermaid)
 
 ### Donate
 
 If you like or found my work useful and want to show some appreciation, you can consider supporting its development by giving a donation.
 
-[![Donate with PayPal](https://alfredoramos.mx/images/paypal.svg)](https://alfredoramos.mx/donate/) | [![Donate with Stripe](https://alfredoramos.mx/images/stripe.svg)](https://alfredoramos.mx/donate/)
-:-:|:-:
-[![Donate with PayPal](https://alfredoramos.mx/images/donate_paypal.svg)](https://alfredoramos.mx/donate/) | [![Donate with Stripe](https://alfredoramos.mx/images/donate_stripe.svg)](https://alfredoramos.mx/donate/)
+|    [![Donate with PayPal](https://alfredoramos.mx/images/paypal.svg)](https://alfredoramos.mx/donate/)     |    [![Donate with Stripe](https://alfredoramos.mx/images/stripe.svg)](https://alfredoramos.mx/donate/)     |
+| :--------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------: |
+| [![Donate with PayPal](https://alfredoramos.mx/images/donate_paypal.svg)](https://alfredoramos.mx/donate/) | [![Donate with Stripe](https://alfredoramos.mx/images/donate_stripe.svg)](https://alfredoramos.mx/donate/) |
 
 ### Installation
 
