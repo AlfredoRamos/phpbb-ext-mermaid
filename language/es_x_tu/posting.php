@@ -10,19 +10,24 @@
 /**
  * @ignore
  */
-if (!defined('IN_PHPBB')) {
+if (!defined('IN_PHPBB'))
+{
 	exit;
 }
 
 /**
  * @ignore
  */
-if (empty($lang) || !is_array($lang)) {
+if (empty($lang) || !is_array($lang))
+{
 	$lang = [];
 }
 
 $lang = array_merge($lang, [
 	'MERMAID' => 'Mermaid',
 	'MERMAID_HELPLINE' => 'Diagrama Mermaid: [mermaid]código del diagrama[/mermaid]',
-	'MERMAID_LIVE_EDITOR' => 'Editor Mermaid en tiempo real'
+	'MERMAID_LIVE_EDITOR' => 'Editor Mermaid en tiempo real',
+	'MERMAID_STATUS_FORMAT' => 'Mermaid está <em>%s</em>',
+	'MERMAID_IS_ON' => 'habilitado',
+	'MERMAID_IS_OFF' => 'deshabilitado'
 ]);

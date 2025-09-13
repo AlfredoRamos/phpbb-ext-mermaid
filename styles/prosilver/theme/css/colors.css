@@ -1,0 +1,10 @@
+/**
+ * Mermaid Diagrams extension for phpBB.
+ * @author Alfredo Ramos <alfredo.ramos@proton.me>
+ * @copyright 2019 Alfredo Ramos
+ * @license GPL-2.0-only
+ */
+.mermaid:not([data-processed='true']) {
+	background-color: #f9f9f9;
+	border-color: #ccc;
+}

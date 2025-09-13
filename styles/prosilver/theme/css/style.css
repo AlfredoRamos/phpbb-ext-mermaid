@@ -10,8 +10,8 @@
 
 .mermaid:not([data-processed='true']) {
 	font-family: Monaco, 'Andale Mono', 'Courier New', Courier, monospace;
-	background-color: #f9f9f9;
-	border: 1px solid #ccc;
+	border-width: 1px;
+	border-style: solid;
 	padding: 5px 10px;
 }
 

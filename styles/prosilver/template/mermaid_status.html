@@ -1,0 +1,11 @@
+<div class="mermaid-status">
+	<hr>
+	{{ L_MERMAID_STATUS }}
+	{% if U_MERMAID_LIVE_EDITOR is not empty %}
+	<br>
+	<a href="{{ U_MERMAID_LIVE_EDITOR|escape('html_attr') }}" rel="external nofollow noreferrer noopener" target="_blank">
+		{{ lang('MERMAID_LIVE_EDITOR') }}
+		<i class="icon fa-external-link fa-fw" aria-hidden="true"></i>
+	</a>
+	{% endif %}
+</div>

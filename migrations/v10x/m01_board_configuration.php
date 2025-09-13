@@ -23,7 +23,7 @@ class m01_board_configuration extends migration
 		return [
 			[
 				'config.add',
-				['mermaid_live_editor_url', 'https://mermaid-js.github.io/mermaid-live-editor']
+				['mermaid_live_editor_url', 'https://mermaid.live']
 			]
 		];
 	}
