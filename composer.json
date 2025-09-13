@@ -3,8 +3,8 @@
 	"type": "phpbb-extension",
 	"description": "Mermaid Diagrams extension for phpBB",
 	"homepage": "https://github.com/AlfredoRamos/phpbb-ext-mermaid",
-	"version": "1.0.0-dev",
-	"time": "2025-09-10",
+	"version": "1.0.0",
+	"time": "2025-09-12",
 	"keywords": [
 		"phpbb",
 		"extension",
