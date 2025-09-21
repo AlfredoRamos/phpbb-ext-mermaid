@@ -22,7 +22,7 @@ jobs:
       PHP_VERSION: ${{ matrix.php-version }}
     strategy:
       matrix:
-        php-version: ['7.2']
+        php-version: ['7.4']
     steps:
       - name: Checkout phpBB
         uses: actions/checkout@v5
@@ -70,7 +70,7 @@ jobs:
 
       - name: Install Node dependencies
         working-directory: extension
-        run: npm install
+        run: npm ci
 
       - name: Setup extension
         working-directory: extension
@@ -127,15 +127,6 @@ jobs:
     strategy:
       matrix:
         include:
-          - php-version: '7.2'
-            db-type: 'mysql'
-            db-version: '5.7'
-          - php-version: '7.2'
-            db-type: 'mariadb'
-            db-version: '10.5'
-          - php-version: '7.3'
-            db-type: 'mariadb'
-            db-version: '10.5'
           - php-version: '7.4'
             db-type: 'mysql'
             db-version: '8.0'
@@ -198,7 +189,7 @@ jobs:
 
       - name: Install Node dependencies
         working-directory: extension
-        run: npm install
+        run: npm ci
 
       - name: Setup extension
         working-directory: extension
@@ -245,7 +236,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - php-version: '7.2'
+          - php-version: '7.4'
             db-type: 'postgres'
             db-version: '15-alpine'
           - php-version: '8.2'
@@ -298,7 +289,7 @@ jobs:
 
       - name: Install Node dependencies
         working-directory: extension
-        run: npm install
+        run: npm ci
 
       - name: Setup extension
         working-directory: extension
@@ -338,7 +329,7 @@ jobs:
 
       - name: Install Node dependencies
         working-directory: extension
-        run: npm install
+        run: npm ci
 
       - name: Test CSS
         working-directory: extension
