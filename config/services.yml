@@ -5,5 +5,22 @@ services:
             - '@auth'
             - '@config'
             - '@language'
+            - '@template'
         tags:
             - { name: event.listener }
+
+    alfredoramos.mermaid.helper:
+        class: alfredoramos\mermaid\includes\helper
+        arguments:
+            - '@language'
+
+    alfredoramos.mermaid.controller.acp:
+        class: alfredoramos\mermaid\controller\acp
+        arguments:
+            - '@config'
+            - '@template'
+            - '@request'
+            - '@language'
+            - '@user'
+            - '@log'
+            - '@alfredoramos.mermaid.helper'

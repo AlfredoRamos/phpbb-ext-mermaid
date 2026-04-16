@@ -1,0 +1,75 @@
+{% include 'overall_header.html' %}
+
+<h1>{{ lang('SETTINGS') }}</h1>
+{{ ACP_MERMAID_SETTINGS_EXPLAIN }}
+
+{% if VALIDATION_ERRORS %}
+<div class="errorbox">
+	{% for ERROR in VALIDATION_ERRORS %}
+	<p>{{ ERROR.MESSAGE }}</p>
+	{% endfor %}
+</div>
+{% endif %}
+
+<form id="mermaid_settings" method="POST" action="{{ U_ACTION }}">
+
+	<fieldset>
+		<legend>{{ lang('GENERAL_SETTINGS') }}</legend>
+		<dl>
+			<dt>
+				<label for="mermaid_theme">{{ lang('MERMAID_THEME') ~ lang('COLON') }}</label>
+				<br><span>{{ lang('MERMAID_THEME_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<select id="mermaid_theme" name="mermaid_theme">
+					{% for item in MERMAID_THEME_LIST %}
+					<option value="{{ item.VALUE }}"{% if item.SELECTED %} selected="selected"{% endif %}>{{ item.NAME }}</option>
+					{% endfor %}
+				</select>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="mermaid_look">{{ lang('MERMAID_LOOK') ~ lang('COLON') }}</label>
+				<br><span>{{ lang('MERMAID_LOOK_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<select id="mermaid_look" name="mermaid_look">
+					{% for item in MERMAID_LOOK_LIST %}
+					<option value="{{ item.VALUE }}"{% if item.SELECTED %} selected="selected"{% endif %}>{{ item.NAME }}</option>
+					{% endfor %}
+				</select>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="mermaid_max_text_size">{{ lang('MERMAID_MAX_TEXT_SIZE') ~ lang('COLON') }}</label>
+				<br><span>{{ lang('MERMAID_MAX_TEXT_SIZE_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<input type="number" id="mermaid_max_text_size" name="mermaid_max_text_size" min="{{ MERMAID_CFG_MIN_TEXT_SIZE }}" max="{{ MERMAID_CFG_MAX_TEXT_SIZE }}" value="{% if MERMAID_MAX_TEXT_SIZE %}{{ MERMAID_MAX_TEXT_SIZE }}{% else %}{{ MERMAID_CFG_DEFAULT_TEXT_SIZE }}{% endif %}">
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="mermaid_max_edges">{{ lang('MERMAID_MAX_EDGES') ~ lang('COLON') }}</label>
+				<br><span>{{ lang('MERMAID_MAX_EDGES_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<input type="number" id="mermaid_max_edges" name="mermaid_max_edges" min="{{ MERMAID_CFG_MIN_EDGES }}" max="{{ MERMAID_CFG_MAX_EDGES }}" value="{% if MERMAID_MAX_EDGES %}{{ MERMAID_MAX_EDGES }}{% else %}{{ MERMAID_CFG_DEFAULT_EDGES }}{% endif %}">
+			</dd>
+		</dl>
+	</fieldset>
+
+	<fieldset>
+		<legend>{{ lang('ACP_SUBMIT_CHANGES') }}</legend>
+		<p class="submit-buttons">
+			<input type="reset" class="button2" value="{{ lang('RESET') }}">
+			<input type="submit" name="submit" class="button1" value="{{ lang('SUBMIT') }}">
+		</p>
+	</fieldset>
+
+	{{ S_FORM_TOKEN }}
+</form>
+
+{% include 'overall_footer.html' %}
