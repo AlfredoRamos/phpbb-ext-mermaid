@@ -4,5 +4,16 @@
 {%- else -%}
 {% INCLUDEJS '@alfredoramos_mermaid/js/mermaid.min.js' %}
 {%- endif -%}
+<script>
+	if (typeof window.mermaid !== 'undefined') {
+		window.mermaid.initialize({
+			startOnLoad: true,
+			theme: '{{ MERMAID_THEME|default("default") }}',
+			look: '{{ MERMAID_LOOK|default("classic") }}',
+			maxTextSize: {{ MERMAID_MAX_TEXT_SIZE|default(50000) }},
+			maxEdges: {{ MERMAID_MAX_EDGES|default(500) }}
+		});
+	}
+</script>
 {%- set INCLUDED_MERMAID_JS = true -%}
 {% endif %}

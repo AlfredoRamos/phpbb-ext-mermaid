@@ -11,11 +11,8 @@ namespace alfredoramos\mermaid\event;
 
 use phpbb\auth\auth;
 use phpbb\config\config;
-use phpbb\user;
-use phpbb\request\request;
-use phpbb\template\template;
 use phpbb\language\language;
-use alfredoramos\mermaid\includes\helper;
+use phpbb\template\template;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class listener implements EventSubscriberInterface
@@ -26,23 +23,11 @@ class listener implements EventSubscriberInterface
 	/** @var config */
 	protected $config;
 
-	/** @var user */
-	protected $user;
-
-	/** @var request */
-	protected $request;
-
-	/** @var template */
-	protected $template;
-
 	/** @var language */
 	protected $language;
 
-	/** @var helper */
-	protected $helper;
-
-	/** @array */
-	protected $tables = [];
+	/** @var template */
+	protected $template;
 
 	/**
 	 * Listener constructor.
@@ -50,14 +35,16 @@ class listener implements EventSubscriberInterface
 	 * @param auth		$auth
 	 * @param config	$config
 	 * @param language	$language
+	 * @param template	$template
 	 *
 	 * @return void
 	 */
-	public function __construct(auth $auth, config $config, language $language)
+	public function __construct(auth $auth, config $config, language $language, template $template)
 	{
 		$this->auth = $auth;
 		$this->config = $config;
 		$this->language = $language;
+		$this->template = $template;
 	}
 
 	/**
@@ -69,8 +56,9 @@ class listener implements EventSubscriberInterface
 	{
 		return [
 			'core.user_setup' => 'load_language',
+			'core.user_setup_after' => 'global_template_variables',
 			'core.text_formatter_s9e_configure_after' => 'configure_mermaid',
-			'core.posting_modify_template_vars' => 'posting_template_variables',
+			'core.posting_modify_template_vars' => 'posting_template_variables'
 		];
 	}
 
@@ -89,6 +77,23 @@ class listener implements EventSubscriberInterface
 			'lang_set'	=> 'posting'
 		];
 		$event['lang_set_ext'] = $lang_set_ext;
+	}
+
+	/**
+	 * Set global template variables.
+	 *
+	 * @param object $event
+	 *
+	 * @return void
+	 */
+	public function global_template_variables($event)
+	{
+		$this->template->assign_vars([
+			'MERMAID_THEME' => $this->config->offsetGet('mermaid_theme'),
+			'MERMAID_LOOK' => $this->config->offsetGet('mermaid_look'),
+			'MERMAID_MAX_TEXT_SIZE' => (int) $this->config->offsetGet('mermaid_max_text_size'),
+			'MERMAID_MAX_EDGES' => (int) $this->config->offsetGet('mermaid_max_edges')
+		]);
 	}
 
 	/**
@@ -114,10 +119,7 @@ class listener implements EventSubscriberInterface
 		);
 
 		// Create mermaid BBCode
-		$configurator->BBCodes->addCustom(
-			$mermaid['bbcode_match'],
-			$mermaid['bbcode_tpl']
-		);
+		$configurator->BBCodes->addCustom($mermaid['bbcode_match'], $mermaid['bbcode_tpl']);
 	}
 
 	/**
@@ -129,11 +131,11 @@ class listener implements EventSubscriberInterface
 	 */
 	public function posting_template_variables($event)
 	{
-		$allowed = !empty($this->config['allow_bbcode']) &&
+		$allowed = !empty($this->config->offsetGet('allow_bbcode')) &&
 			!empty($this->auth->acl_get('f_bbcode', $event['forum_id']));
 
 		$event['page_data'] = array_merge($event['page_data'], [
-			'U_MERMAID_LIVE_EDITOR' => trim($this->config['mermaid_live_editor_url']),
+			'U_MERMAID_LIVE_EDITOR' => trim($this->config->offsetGet('mermaid_live_editor_url')),
 			'S_MERMAID_ALLOWED' => $allowed,
 			'L_MERMAID_STATUS' => $this->language->lang(
 				'MERMAID_STATUS_FORMAT',

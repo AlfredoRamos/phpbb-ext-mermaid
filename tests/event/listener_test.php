@@ -12,6 +12,7 @@ namespace alfredoramos\mermaid\tests\event;
 use phpbb\auth\auth;
 use phpbb\config\config;
 use phpbb\language\language;
+use phpbb\template\template;
 use alfredoramos\mermaid\event\listener;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -23,6 +24,7 @@ class listener_test extends \phpbb_test_case
 	protected $auth;
 	protected $config;
 	protected $language;
+	protected $template;
 
 	protected function setUp(): void
 	{
@@ -31,6 +33,8 @@ class listener_test extends \phpbb_test_case
 		$this->config = $this->getMockBuilder(config::class)
 			->disableOriginalConstructor()->getMock();
 		$this->language = $this->getMockBuilder(language::class)
+			->disableOriginalConstructor()->getMock();
+		$this->template = $this->getMockBuilder(template::class)
 			->disableOriginalConstructor()->getMock();
 	}
 
@@ -41,7 +45,8 @@ class listener_test extends \phpbb_test_case
 			new listener(
 				$this->auth,
 				$this->config,
-				$this->language
+				$this->language,
+				$this->template
 			)
 		);
 	}
@@ -51,6 +56,7 @@ class listener_test extends \phpbb_test_case
 		$this->assertSame(
 			[
 				'core.user_setup',
+				'core.user_setup_after',
 				'core.text_formatter_s9e_configure_after',
 				'core.posting_modify_template_vars'
 			],

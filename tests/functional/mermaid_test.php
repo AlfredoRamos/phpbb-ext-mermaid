@@ -14,14 +14,10 @@ namespace alfredoramos\mermaid\tests\functional;
  */
 class mermaid_test extends \phpbb_functional_test_case
 {
-	static protected function setup_extensions()
-	{
-		return ['alfredoramos/mermaid'];
-	}
+	use functional_test_case_trait;
 
-	protected function setUp(): void
+	protected function init(): void
 	{
-		parent::setUp();
 		$this->add_lang_ext('alfredoramos/mermaid', 'posting');
 		$this->login();
 	}
