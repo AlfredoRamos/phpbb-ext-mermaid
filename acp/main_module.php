@@ -66,7 +66,7 @@ class main_module
 				$this->page_title = sprintf(
 					'%s - %s',
 					$this->language->lang('SETTINGS'),
-					$this->language->lang('ACP_MERMAIDI')
+					$this->language->lang('ACP_MERMAID')
 				);
 				$this->acp_controller->settings_mode($this->u_action);
 			break;
