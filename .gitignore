@@ -3,3 +3,5 @@ vendor/
 node_modules/
 composer.lock
 *.tmp
+.phpunit.result.cache
+.crowdin/
