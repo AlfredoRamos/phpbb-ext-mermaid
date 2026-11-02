@@ -24,7 +24,7 @@
 	"devDependencies": {
 		"autoprefixer": "^10.4.27",
 		"cssnano": "^9.0.0",
-		"glob": "^13.0.6",
+		"glob": "^14.0.3",
 		"postcss": "^8.5.9",
 		"postcss-cli": "^12.0.0",
 		"sass-embedded": "^1.99.0",
